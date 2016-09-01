@@ -43,7 +43,7 @@ namespace NewSmartHome.ServiceClasses
 
         }
 
-        public void Deserialaze ()
+        public string  Deserialaze ()
         {
             List<int> listKeyDevice = new List<int>();
             List<Device> listDevice = new List<Device>();
@@ -64,7 +64,7 @@ namespace NewSmartHome.ServiceClasses
             }
 
 
-
+            return "Dictionary Devices deserialized from XML";
         }
     }
 }

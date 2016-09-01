@@ -50,6 +50,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,8 +60,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeviceClasses\Device.cs" />
+    <Compile Include="DeviceClasses\Fridge.cs" />
+    <Compile Include="DeviceClasses\Lamp.cs" />
+    <Compile Include="DeviceClasses\MWOven.cs" />
+    <Compile Include="DeviceClasses\Oven.cs" />
+    <Compile Include="DeviceClasses\Radio.cs" />
+    <Compile Include="DeviceClasses\RadioLamp.cs" />
+    <Compile Include="Enums\FridgeMode.cs" />
+    <Compile Include="Enums\LampMode.cs" />
+    <Compile Include="Enums\MWOvenMode.cs" />
+    <Compile Include="Interfaces\IBrightnesable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceClasses\DeviceCreator.cs" />
+    <Compile Include="ServiceClasses\FileOperations.cs" />
     <Compile Include="ServiceClasses\SerializerDictionaryXML.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +91,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Delegates\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,18 +1,103 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="NewSmartHome.DeviceClasses.Device" Collapsed="true">
-    <Position X="10.5" Y="1" Width="1.5" />
+    <Position X="3" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DeviceClasses\Device.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NewSmartHome.ServiceClasses.SerializerDictionaryXML" Collapsed="true">
-    <Position X="9.75" Y="2" Width="1.5" />
+    <Position X="15.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAAAAAAIAAAACAAAABgAAAAAIAABAAAAAA=</HashCode>
       <FileName>ServiceClasses\SerializerDictionaryXML.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Refrigerator.FileOperations" Collapsed="true">
+    <Position X="17.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAQAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServiceClasses\FileOperations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NewSmartHome.ServiceClasses.DeviceCreator" Collapsed="true">
+    <Position X="15.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServiceClasses\DeviceCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NewSmartHome.DeviceClasses.Fridge" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeviceClasses\Fridge.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NewSmartHome.DeviceClasses.Lamp" Collapsed="true">
+    <Position X="4.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeviceClasses\Lamp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewSmartHome.DeviceClasses.MWOven" Collapsed="true">
+    <Position X="6.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeviceClasses\MWOven.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NewSmartHome.DeviceClasses.Oven" Collapsed="true">
+    <Position X="2.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeviceClasses\Oven.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NewSmartHome.DeviceClasses.Radio" Collapsed="true">
+    <Position X="8.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeviceClasses\Radio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NewSmartHome.DeviceClasses.RadioLamp" Collapsed="true">
+    <Position X="10.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeviceClasses\RadioLamp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="NewSmartHome.Interfaces.IBrightnesable" Collapsed="true">
+    <Position X="12.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IBrightnesable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="NewSmartHome.Enums.FridgeMode" Collapsed="true">
+    <Position X="18.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAFAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\FridgeMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="NewSmartHome.Enums.LampMode" Collapsed="true">
+    <Position X="20" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\LampMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="NewSmartHome.Enums.MWOvenMode" Collapsed="true">
+    <Position X="18.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIACQAAAAAAAAgAAA=</HashCode>
+      <FileName>Enums\MWOvenMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
