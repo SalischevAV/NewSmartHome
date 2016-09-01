@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewSmartHome.Enums
+namespace NewSmartHome.Interfaces
 {
-    public enum FridgeMode
+    public interface IModeable
     {
-        extraCold,
-        cold,
-        defrost
+        string SetMode(string setting);
     }
 }

@@ -12,9 +12,9 @@ namespace NewSmartHome.ServiceClasses
     public class SerializerDictionaryXML
     {
 
-        private XmlSerializer keySerializer = new XmlSerializer(typeof(List<int>));
+        private XmlSerializer keySerializer = new XmlSerializer(typeof(List<string>));
         private XmlSerializer deviceSerializer = new XmlSerializer(typeof(List<Device>));
-        public Dictionary<int, Device> deserialazeDict { set; get; }
+        public Dictionary<string, Device> deserialazeDict { set; get; }
         public string PathKey { set; get; }
         public string PathDevice { set; get; }
         public SerializerDictionaryXML(string pathKey, string pathDevice)
@@ -24,9 +24,9 @@ namespace NewSmartHome.ServiceClasses
         }
 
 
-        public string Serialaze(Dictionary<int, Device> dict)
+        public string Serialaze(Dictionary<string, Device> dict)
         {
-            List<int> listKeyDevice = new List<int>();
+            List<string> listKeyDevice = new List<string>();
             List<Device> listDevice = new List<Device>();
             listKeyDevice.AddRange(dict.Keys);
             listDevice.AddRange(dict.Values);
@@ -45,12 +45,12 @@ namespace NewSmartHome.ServiceClasses
 
         public string  Deserialaze ()
         {
-            List<int> listKeyDevice = new List<int>();
+            List<string> listKeyDevice = new List<string>();
             List<Device> listDevice = new List<Device>();
 
             using (FileStream fs = new FileStream(PathKey, FileMode.Open))
             {
-                listKeyDevice = (List<int>)keySerializer.Deserialize(fs);
+                listKeyDevice = (List<string>)keySerializer.Deserialize(fs);
             }
 
             using (FileStream fs = new FileStream(PathDevice, FileMode.Open))

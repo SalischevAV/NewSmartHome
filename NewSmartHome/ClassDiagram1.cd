@@ -3,26 +3,26 @@
   <Class Name="NewSmartHome.DeviceClasses.Device" Collapsed="true">
     <Position X="3" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAABAAAABAAAAAA=</HashCode>
       <FileName>DeviceClasses\Device.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NewSmartHome.ServiceClasses.SerializerDictionaryXML" Collapsed="true">
-    <Position X="15.75" Y="5" Width="1.5" />
+    <Position X="7.25" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAAAAAAIAAAACAAAABgAAAAAIAABAAAAAA=</HashCode>
       <FileName>ServiceClasses\SerializerDictionaryXML.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Refrigerator.FileOperations" Collapsed="true">
-    <Position X="17.75" Y="4" Width="1.5" />
+    <Position X="9.25" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAIAQAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
       <FileName>ServiceClasses\FileOperations.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NewSmartHome.ServiceClasses.DeviceCreator" Collapsed="true">
-    <Position X="15.75" Y="4" Width="1.5" />
+    <Position X="7.25" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ServiceClasses\DeviceCreator.cs</FileName>
@@ -31,14 +31,15 @@
   <Class Name="NewSmartHome.DeviceClasses.Fridge" Collapsed="true">
     <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAABIAAAgEAAAgAAAAAAAAAAAQABAAAgAAAAAA=</HashCode>
       <FileName>DeviceClasses\Fridge.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="NewSmartHome.DeviceClasses.Lamp" Collapsed="true">
     <Position X="4.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAIA=</HashCode>
       <FileName>DeviceClasses\Lamp.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -71,17 +72,39 @@
       <FileName>DeviceClasses\RadioLamp.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="NewSmartHome.Interfaces.IBrightnesable" Collapsed="true">
-    <Position X="12.5" Y="6.25" Width="1.5" />
+  <Class Name="NewSmartHome.DeviceClasses.ColdGenerator" Collapsed="true">
+    <Position X="0.75" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAABAAAAAAAAAgAAAAAAAAAAAAABAAAgAAAAAA=</HashCode>
+      <FileName>LowLevelClasses\ColdGenerator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="NewSmartHome.Interfaces.IBrightnesable" Collapsed="true">
+    <Position X="4.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
       <FileName>Interfaces\IBrightnesable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NewSmartHome.Interfaces.IModeable" Collapsed="true">
+    <Position X="2.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IModeable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NewSmartHome.Interfaces.ITemperatureable" Collapsed="true">
+    <Position X="4.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ITemperatureable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="NewSmartHome.Enums.FridgeMode" Collapsed="true">
     <Position X="18.25" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAFAAAAAgAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAFAAAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>Enums\FridgeMode.cs</FileName>
     </TypeIdentifier>
   </Enum>

@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.Interfaces
 {
-    public interface IBrightnesable
+    public interface ITemperatureable
     {
-        string SetBrightness(string setting);
+        int Temp { set; get; }
+        int SetTemp(int settingTemp);
+        int IncrTemp();
+        int DecrTemp();
+
     }
 }
