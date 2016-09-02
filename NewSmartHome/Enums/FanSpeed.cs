@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.Enums
 {
-    public enum LampMode
+    public enum FanSpeed
     {
-        Dark,
-        Dim,
-        MediumBright,
-        Bright
+        slow,
+        medium,
+        hight
     }
 }

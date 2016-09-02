@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewSmartHome.Enums
+namespace NewSmartHome.DeviceClasses
 {
-    public enum LampMode
+    public class Conditioner : Device
     {
-        Dark,
-        Dim,
-        MediumBright,
-        Bright
     }
 }

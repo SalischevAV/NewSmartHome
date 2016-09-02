@@ -9,11 +9,12 @@ namespace NewSmartHome.DeviceClasses
     public abstract class Device
     {
        
-        public bool State { set; get; }
+        public virtual bool State { set; get; }
         
-        public void Power()
+        public virtual string Power()
         {
             State = !State;
+            return this.GetType() + "POWER" + State;
         }
 
         public override string ToString()

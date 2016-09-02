@@ -1,4 +1,5 @@
-﻿using NewSmartHome.Enums;
+﻿using NewSmartHome.DeviceInterfaces;
+using NewSmartHome.Enums;
 using NewSmartHome.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,21 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
-    public class Fridge : Device, IModeable
+    public class Fridge : Device, IModeable, IFridgeable
     {
+        public bool Door { set; get; }
+        public override bool State
+        {
+            get
+            {
+                return base.State;
+            }
+
+            set
+            {
+                base.State = value;
+            }
+        }
         public IBrightnesable FridgeLamp { set; get; }
         public FridgeMode Mode { set; get; }
         public ColdGenerator Compressor { set; get; }
@@ -24,39 +38,75 @@ namespace NewSmartHome.DeviceClasses
                 else if ((Mode == FridgeMode.defrost) && (value > -5 && value <= 0))
                 { Temp = value; }
             }
+            get
+            {
+                return Temp;
+            }
         }
 
 
         public string SetMode(string setting)
         {
-            switch (setting)
+            if (State)
             {
-                case "extra":
-                    Mode = FridgeMode.extraCold;
-                    return "fridge mode set EXTRACOLD";
-                case "cold":
-                    Mode = FridgeMode.cold;
-                    return "fridge mode set COLD";
-                case "hot":
-                default:
-                    Mode = FridgeMode.defrost;
-                    return "fridge mode set DEFROST";
+                switch (setting)
+                {
+                    case "extra":
+                        Mode = FridgeMode.extraCold;
+                        return "fridge mode set EXTRACOLD";
+                    case "cold":
+                        Mode = FridgeMode.cold;
+                        return "fridge mode set COLD";
+                    case "hot":
+                    default:
+                        Mode = FridgeMode.defrost;
+                        return "fridge mode set DEFROST";
+                }
             }
+            else return "Can't change mode - fridge is POWER OFF";
         }
 
-        public void SetTemp(int settingTemp)
+        public string SetTemp(int settingTemp)
         {
-            Temp = Compressor.SetTemp(settingTemp); 
+            if (State)
+            {
+                Temp = Compressor.SetTemp(settingTemp);
+                return "Temperature set: " + Temp;
+            }
+            else return "fridge is POWER OFF";
         }
 
-        public void IncrTemp()
+        public string IncrTemp()
         {
-            Temp = Compressor.IncrTemp();
+            if (State)
+            {
+                Temp = Compressor.IncrTemp();
+                return "Temperature set: " + Temp;
+            }
+            else return "fridge is POWER OFF";
         }
 
-        public void DecrTemp()
+        public string DecrTemp()
         {
-            Temp = Compressor.DecrTemp();
+            if (State)
+            {
+                Temp = Compressor.DecrTemp();
+                return "Temperature set: " + Temp;
+            }
+            else return "fridge is POWER OFF";
         }
+
+        public string DoorManipulation()
+        {
+            Door = !Door;
+            if (State)
+            {
+                if (Door) { FridgeLamp.SetBrightness("medium"); }
+                else { FridgeLamp.SetBrightness("dark"); }
+            }
+            return "Door: " + Door;
+        }
+
+
     }
 }
