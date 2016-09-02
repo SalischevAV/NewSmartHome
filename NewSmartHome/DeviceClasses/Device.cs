@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,9 +9,9 @@ namespace NewSmartHome.DeviceClasses
 {
     public abstract class Device
     {
-       
+
         public virtual bool State { set; get; }
-        
+
         public virtual string Power()
         {
             State = !State;
@@ -19,7 +20,16 @@ namespace NewSmartHome.DeviceClasses
 
         public override string ToString()
         {
-            return Convert.ToString(this.GetType())+ ", power: " + State;
+            Type t = this.GetType();
+            string info = Convert.ToString(t) + ". ";
+            PropertyInfo[] propertyArr = t.GetProperties();
+
+            foreach (PropertyInfo pInf in propertyArr)
+            {
+                info += pInf.Name + " - ";
+                info += pInf.PropertyType + "; ";
+            }
+            return info;
         }
     }
 }

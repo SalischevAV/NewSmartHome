@@ -17,14 +17,16 @@ namespace NewSmartHome
             //Console.WriteLine(fr.State);
             //fr.Power();
             //Console.WriteLine(fr.State);
-            List<Device> dv = new List<Device>();
-            dv.Add(fr);
-            dv.Add(new Lamp());
-            foreach(Device dev in dv)
-            {
-                dev.Power();
-                Console.WriteLine(dev.State);
-            }
+            //List<Device> dv = new List<Device>();
+            //dv.Add(fr);
+            ////dv.Add(new Lamp());
+            //foreach(Device dev in dv)
+            //{
+            //    dev.Power();
+            //    Console.WriteLine(dev.State);
+            //}
+
+            Console.WriteLine(fr.ToString());
 
 
 

@@ -40,7 +40,7 @@
     <Position X="4.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAIA=</HashCode>
-      <FileName>DeviceClasses\Lamp.cs</FileName>
+      <FileName>LowLevelClasses\Lamp.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -61,7 +61,7 @@
   <Class Name="NewSmartHome.DeviceClasses.Radio" Collapsed="true">
     <Position X="8.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAACAAAIAAAAAAAA=</HashCode>
       <FileName>DeviceClasses\Radio.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -140,7 +140,7 @@
   <Enum Name="NewSmartHome.Enums.LampMode" Collapsed="true">
     <Position X="14.25" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAgIAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAIAAAAAAAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enums\LampMode.cs</FileName>
     </TypeIdentifier>
   </Enum>

@@ -102,7 +102,7 @@ namespace NewSmartHome.DeviceClasses
             if (State)
             {
                 if (Door) { FridgeLamp.SetBrightness("medium"); }
-                else { FridgeLamp.SetBrightness("dark"); }
+                else { FridgeLamp.SetBrightness("off"); }
             }
             return "Door: " + Door;
         }

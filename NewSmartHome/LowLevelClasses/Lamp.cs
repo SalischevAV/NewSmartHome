@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
-    public class Lamp : Device, IBrightnesable
+    public class Lamp : IBrightnesable
     {
         public Lamp() { } //ctor for XML-serializable
         public Lamp(bool state, LampMode mode) //ctor for injection
         {
-            State = state;
-            Brightness = mode;
+           Brightness = mode;
         }
         
 
@@ -23,8 +22,7 @@ namespace NewSmartHome.DeviceClasses
 
         public string SetBrightness(string setting)
         {
-            if (State)
-            {
+           
                 switch (setting)
                 {
                     case "dim":
@@ -36,13 +34,12 @@ namespace NewSmartHome.DeviceClasses
                     case "hight":
                         Brightness = LampMode.Bright;
                         return "lamp mode set BRIGHT";
-                    case "dark":
+                    case "off":
                     default:
-                        Brightness = LampMode.Dark;
+                        Brightness = LampMode.Off;
                         return "lamp mode set DARK";
                 }
-            }
-            else return "Can't change mode - lamp is POWER OFF";
+           
 
         }
     }

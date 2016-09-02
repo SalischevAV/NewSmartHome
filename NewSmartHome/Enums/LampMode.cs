@@ -8,7 +8,7 @@ namespace NewSmartHome.Enums
 {
     public enum LampMode
     {
-        Dark,
+        Off,
         Dim,
         MediumBright,
         Bright
