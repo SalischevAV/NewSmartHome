@@ -14,6 +14,7 @@ namespace NewSmartHome
         static void Main(string[] args)
         {
             Fridge fr = new Fridge();
+            Conditioner cr = new Conditioner();
             //Console.WriteLine(fr.State);
             //fr.Power();
             //Console.WriteLine(fr.State);
@@ -27,6 +28,8 @@ namespace NewSmartHome
             //}
 
             Console.WriteLine(fr.ToString());
+            Console.WriteLine();
+            Console.WriteLine(cr.ToString());
 
 
 

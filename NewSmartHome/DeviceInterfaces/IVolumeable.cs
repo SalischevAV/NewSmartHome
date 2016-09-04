@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewSmartHome.Enums
+namespace NewSmartHome.DeviceInterfaces
 {
-    public enum FanSpeed
+    public interface IVolumeable
     {
-        off,
-        slow,
-        medium,
-        hight
+        string SetVolume(bool increase);
     }
 }

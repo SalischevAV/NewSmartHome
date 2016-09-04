@@ -60,7 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeviceClasses\Conditioner.cs" />
+    <Compile Include="DeviceInterfaces\IChanneable.cs" />
+    <Compile Include="DeviceInterfaces\IDoorable.cs" />
     <Compile Include="DeviceInterfaces\IFridgeable.cs" />
+    <Compile Include="DeviceInterfaces\ILightable.cs" />
+    <Compile Include="DeviceInterfaces\IVolumeable.cs" />
     <Compile Include="Enums\FanSpeed.cs" />
     <Compile Include="LowLevelClasses\AudioPlayer.cs" />
     <Compile Include="LowLevelClasses\ColdGenerator.cs" />

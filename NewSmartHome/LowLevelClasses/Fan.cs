@@ -22,8 +22,10 @@ namespace NewSmartHome.LowLevelClasses
                     SpeedFan = FanSpeed.medium;
                     return SpeedFan;
                 case "hight":
-                default:
                     SpeedFan = FanSpeed.hight;
+                    return SpeedFan;
+                default:
+                    SpeedFan = FanSpeed.off;
                     return SpeedFan;
 
 

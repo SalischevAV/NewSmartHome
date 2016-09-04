@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
-    public class Fridge : Device, IModeable, IFridgeable
+    public class Fridge : Device, IModeable, IFridgeable, IDoorable
     {
         public bool Door { set; get; }
         public override bool State

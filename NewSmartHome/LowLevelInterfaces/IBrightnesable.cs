@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewSmartHome.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace NewSmartHome.Interfaces
 {
     public interface IBrightnesable
     {
-        string SetBrightness(string setting);
+        LampMode SetBrightness(string setting);
     }
 }
