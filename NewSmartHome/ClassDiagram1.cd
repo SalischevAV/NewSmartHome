@@ -55,7 +55,7 @@
   <Class Name="NewSmartHome.DeviceClasses.Radio" Collapsed="true">
     <Position X="5.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAAAgACAAABAAAAAAAAAAAACAAAIAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAgAAAgICAAABAAAAAAAAAAAACAAAIAAAAAAAA=</HashCode>
       <FileName>DeviceClasses\Radio.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -79,7 +79,7 @@
   <Class Name="NewSmartHome.DeviceClasses.Conditioner" Collapsed="true">
     <Position X="7.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAABAAAAgAAAAgAAAAAAAEEAAQABAAAgAAAAAA=</HashCode>
       <FileName>DeviceClasses\Conditioner.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -107,6 +107,13 @@
       <FileName>DeviceClasses\MWOven.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewSmartHome.UI.ConsoleUIDevice" Collapsed="true">
+    <Position X="12.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAQAAAAEAAAAAAAAAAAAAIEAAAgA=</HashCode>
+      <FileName>UI\ConsoleUIDevice.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Interface Name="NewSmartHome.Interfaces.IBrightnesable" Collapsed="true">
     <Position X="12.75" Y="4.75" Width="1.5" />
@@ -143,11 +150,11 @@
       <FileName>LowLevelInterfaces\IFanable.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="NewSmartHome.DeviceInterfaces.IChanneable" Collapsed="true">
+  <Interface Name="NewSmartHome.DeviceInterfaces.IChannelable" Collapsed="true">
     <Position X="0.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAgAAAAACAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>DeviceInterfaces\IChanneable.cs</FileName>
+      <FileName>DeviceInterfaces\IChannelable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="NewSmartHome.DeviceInterfaces.IDoorable" Collapsed="true">

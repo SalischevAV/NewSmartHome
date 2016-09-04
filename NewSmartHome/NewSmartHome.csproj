@@ -60,7 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeviceClasses\Conditioner.cs" />
-    <Compile Include="DeviceInterfaces\IChanneable.cs" />
+    <Compile Include="DeviceInterfaces\IChannelable.cs" />
     <Compile Include="DeviceInterfaces\IDoorable.cs" />
     <Compile Include="DeviceInterfaces\IFridgeable.cs" />
     <Compile Include="DeviceInterfaces\ILightable.cs" />
@@ -89,6 +89,7 @@
     <Compile Include="ServiceClasses\DeviceCreator.cs" />
     <Compile Include="ServiceClasses\FileOperations.cs" />
     <Compile Include="ServiceClasses\SerializerDictionaryXML.cs" />
+    <Compile Include="UI\ConsoleUIDevice.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

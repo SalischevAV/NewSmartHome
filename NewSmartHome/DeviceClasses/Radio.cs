@@ -8,21 +8,22 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
-    public class Radio: Device, IVolumeable, IChanneable
+    public class Radio : Device, IVolumeable, IChannelable
     {
         public ILowLevelVolumeable SoundController { set; get; }
         public int Volume { set; get; }
+        private int channel;
         public int Channel
         {
             set
             {
-                if (value <=100 && value > 0)
+                if (value <= 100 && value > 0)
                 {
-                    Channel = value;
+                    channel = value;
                 }
-                
+
             }
-            get { return Channel; }
+            get { return channel; }
         }
 
         public string SetChannel(int settingChannel)

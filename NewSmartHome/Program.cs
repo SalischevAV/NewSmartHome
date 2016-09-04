@@ -1,4 +1,5 @@
 ﻿using NewSmartHome.DeviceClasses;
+using NewSmartHome.UI;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,23 +14,11 @@ namespace NewSmartHome
     {
         static void Main(string[] args)
         {
-            Fridge fr = new Fridge();
-            Conditioner cr = new Conditioner();
-            //Console.WriteLine(fr.State);
-            //fr.Power();
-            //Console.WriteLine(fr.State);
-            //List<Device> dv = new List<Device>();
-            //dv.Add(fr);
-            ////dv.Add(new Lamp());
-            //foreach(Device dev in dv)
-            //{
-            //    dev.Power();
-            //    Console.WriteLine(dev.State);
-            //}
-
-            Console.WriteLine(fr.ToString());
-            Console.WriteLine();
-            Console.WriteLine(cr.ToString());
+            Radio r = new Radio();
+            Oven o = new Oven();
+            ConsoleUIDevice cui = new ConsoleUIDevice();
+            cui.ControlWithIChannelable(r);
+            cui.ControlWithIDoorable(o);
 
 
 
