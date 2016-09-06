@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Delegates\WriteLogDelegate.cs" />
     <Compile Include="DeviceClasses\Conditioner.cs" />
     <Compile Include="DeviceInterfaces\IChannelable.cs" />
     <Compile Include="DeviceInterfaces\IDoorable.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="ServiceClasses\DeviceCreator.cs" />
     <Compile Include="ServiceClasses\FileOperations.cs" />
     <Compile Include="ServiceClasses\SerializerDictionaryXML.cs" />
+    <Compile Include="ServiceClasses\WriteLogToFile.cs" />
     <Compile Include="UI\ConsoleUIDevice.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -107,9 +109,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Delegates\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

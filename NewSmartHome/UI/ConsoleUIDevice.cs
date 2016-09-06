@@ -1,4 +1,5 @@
-﻿using NewSmartHome.DeviceInterfaces;
+﻿using NewSmartHome.Delegates;
+using NewSmartHome.DeviceInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace NewSmartHome.UI
 {
     public class ConsoleUIDevice
     {
+        public event WriteLogDelegate actWithDevice;
         public string Message { set; get; }
         public void ControlWithIChannelable(IChannelable sameDevice)
         {
@@ -20,10 +22,35 @@ namespace NewSmartHome.UI
                 int setChannel;
                 if (Int32.TryParse(Console.ReadLine(), out setChannel)) ;
                 sameDevice.SetChannel(setChannel);
+                if (actWithDevice != null)
+                {
+                    actWithDevice.Invoke((sameDevice.SetChannel(setChannel))); // можно как-то проще?
+                }
             }
-            else if (Message.Contains("increase")) { sameDevice.AdjustChannel(true); }
-            else if (Message.Contains("decrease")) { sameDevice.AdjustChannel(false); }
-            else { Console.WriteLine("Nonexistent command"); }
+            else if (Message.Contains("increase"))
+            {
+                sameDevice.AdjustChannel(true);
+                if (actWithDevice != null)
+                {
+                    actWithDevice.Invoke(sameDevice.AdjustChannel(true));
+                }
+            }
+            else if (Message.Contains("decrease"))
+            {
+                sameDevice.AdjustChannel(false);
+                if (actWithDevice != null)
+                {
+                    actWithDevice.Invoke(sameDevice.AdjustChannel(true));
+                }
+            }
+            else
+            {
+                Console.WriteLine("Nonexistent command");
+                if (actWithDevice != null)
+                {
+                    actWithDevice.Invoke("Nonexistent command");
+                }
+            }
         }
         public void ControlWithIDoorable(IDoorable sameDevice)
         {
@@ -31,6 +58,10 @@ namespace NewSmartHome.UI
             Console.ReadLine();
             {
                 sameDevice.DoorManipulation();
+                if (actWithDevice != null)
+                {
+                    actWithDevice.Invoke(sameDevice.DoorManipulation()); // можно как-то проще?
+                }
             }
         }
         public void ControlWithFridgeable(IFridgeable sameDevice)
@@ -56,7 +87,7 @@ namespace NewSmartHome.UI
             {
                 case "dim":
                     samedevice.SetBrightnes("dim");
-                        break;
+                    break;
                 case "medium":
                     samedevice.SetBrightnes("medium");
                     break;
@@ -69,7 +100,26 @@ namespace NewSmartHome.UI
 
             }
         }
-        public void ControlWithModeAble (IVolumeable sameDevice)
-        { }
+        public void ControlWithVolumeable(IVolumeable sameDevice)
+        {
+            bool adjVol = true;
+            while (adjVol)
+            {
+                Console.WriteLine("Увеличить звук нажмите - 1, уменьшить нажмите - 2, выход - любая клавиша");
+                char keySound = Console.ReadKey().KeyChar;
+                switch (keySound)
+                {
+                    case '1':
+                        sameDevice.SetVolume(true);
+                        break;
+                    case '2':
+                        sameDevice.SetVolume(false);
+                        break;
+                    default:
+                        adjVol = false;
+                        break;
+                }
+            }
+        }
     }
 }

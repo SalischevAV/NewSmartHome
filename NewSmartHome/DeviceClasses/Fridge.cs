@@ -1,4 +1,5 @@
-﻿using NewSmartHome.DeviceInterfaces;
+﻿using NewSmartHome.Delegates;
+using NewSmartHome.DeviceInterfaces;
 using NewSmartHome.Enums;
 using NewSmartHome.Interfaces;
 using System;
@@ -43,8 +44,6 @@ namespace NewSmartHome.DeviceClasses
                 return Temp;
             }
         }
-
-
         public string SetMode(string setting)
         {
             if (State)

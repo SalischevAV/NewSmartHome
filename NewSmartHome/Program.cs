@@ -1,4 +1,5 @@
 ﻿using NewSmartHome.DeviceClasses;
+using NewSmartHome.ServiceClasses;
 using NewSmartHome.UI;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,11 @@ namespace NewSmartHome
         {
             Radio r = new Radio();
             Oven o = new Oven();
+            
             ConsoleUIDevice cui = new ConsoleUIDevice();
+            cui.actWithDevice += WriteLogToFile.WriteLog;
             cui.ControlWithIChannelable(r);
-            cui.ControlWithIDoorable(o);
+            //cui.ControlWithIDoorable(o);
 
 
 
