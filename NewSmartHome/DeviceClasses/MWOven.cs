@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
+    [Serializable]
     public class MWOven : Oven, IModeable
     {
+
         public MWOvenMode MWMode { set; get; }
         public string SetMode(string setting)
         {

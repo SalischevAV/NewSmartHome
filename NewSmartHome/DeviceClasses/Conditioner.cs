@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
+    [Serializable]
     public class Conditioner : Device, IFridgeable, IModeable
     {
         public ITemperatureable Compressor { set; get; }

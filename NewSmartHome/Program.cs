@@ -22,14 +22,19 @@ namespace NewSmartHome
             Conditioner cond = new Conditioner();
             MWOven mw = new MWOven();
 
-            ConsoleUIDevice cui = new ConsoleUIDevice();
-            cui.actWithDevice += WriteLogToFile.WriteLog;
-            //cui.ControlWithIChannelable(r);
-            //cui.ControlWithIDoorable(o);
-            cond.State = true;
-            cui.ControlWithModeable(cond);
+            //ConsoleUIDevice cui = new ConsoleUIDevice();
+            //cui.actWithDevice += WriteLogToFile.WriteLog;
+            ////cui.ControlWithIChannelable(r);
+            ////cui.ControlWithIDoorable(o);
+            //cond.State = true;
+            //cui.ControlWithModeable(cond);
 
-
+            DeviceCreator dc = new DeviceCreator();
+            //foreach (string s in dc.deviceClasses)
+            //{
+            //    Console.WriteLine(s);
+            //}
+            Console.WriteLine(dc.device);
 
             Console.WriteLine("press any key");
             Console.ReadLine();

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
+    [Serializable]
     public class Radio : Device, IVolumeable, IChannelable
     {
         public ILowLevelVolumeable SoundController { set; get; }

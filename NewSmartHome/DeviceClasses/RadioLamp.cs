@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
+    [Serializable]
     public class RadioLamp: Radio, ILightable
     {
         public IBrightnesable RLamp { set; get; }

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
+    [Serializable]
     public class Oven : Device, IDoorable, IFridgeable
     {
         public IBrightnesable OvenLamp { set; get; }

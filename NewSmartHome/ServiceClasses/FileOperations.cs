@@ -7,6 +7,7 @@ using System.Runtime.Serialization.Formatters.Soap;
 using System.Xml.Serialization;
 using System.IO;
 using NewSmartHome.DeviceClasses;
+using NewSmartHome.ServiceClasses;
 
 namespace Refrigerator
 {
@@ -64,8 +65,21 @@ namespace Refrigerator
         //    return "Smart house load from SOAP format";
         //}
 
-        public void SaveXMLFormat()
+        public string SaveXMLFormat(string keysPath, string devicesPath, Dictionary<string, Device> dict)
         {
+            SerializerDictionaryXML xml = new SerializerDictionaryXML(keysPath, devicesPath);
+            xml.Serialaze(dict);
+            return "Smart house save in XML format";
+
+        }
+
+        public string LoadFromXMLFormat (string keysPath, string devicesPath, Dictionary<string, Device> dict)
+
+        {
+            SerializerDictionaryXML xml = new SerializerDictionaryXML(keysPath, devicesPath);
+            xml.Deserialaze();
+            dict = xml.deserialazeDict;
+            return "Smart house load from XML format";
         }
     }
 }

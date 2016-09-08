@@ -38,7 +38,6 @@ namespace NewSmartHome.ServiceClasses
             {
                 deviceSerializer.Serialize(fs, listDevice);
             }
-
             return "Dictionary Devices serialized to XML";
 
         }
@@ -62,8 +61,6 @@ namespace NewSmartHome.ServiceClasses
             {
                 deserialazeDict.Add(listKeyDevice[i], listDevice[i]);
             }
-
-
             return "Dictionary Devices deserialized from XML";
         }
     }

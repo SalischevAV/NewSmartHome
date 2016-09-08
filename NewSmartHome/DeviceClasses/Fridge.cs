@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
+    [Serializable]
     public class Fridge : Device, IModeable, IFridgeable, IDoorable
     {
         public bool Door { set; get; }
