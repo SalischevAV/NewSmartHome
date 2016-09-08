@@ -32,7 +32,7 @@ namespace NewSmartHome.DeviceClasses
         {
             set
             {
-                if ((Mode == FridgeMode.extraCold) && (value <= -10 && value > -20))
+                if ((Mode == FridgeMode.extracold) && (value <= -10 && value > -20))
                 { Temp = value; }
                 else if ((Mode == FridgeMode.cold) && (value <= -5 && value >= -9))
                 { Temp = value; }
@@ -51,7 +51,7 @@ namespace NewSmartHome.DeviceClasses
                 switch (setting)
                 {
                     case "extra":
-                        Mode = FridgeMode.extraCold;
+                        Mode = FridgeMode.extracold;
                         return "fridge mode set EXTRACOLD";
                     case "cold":
                         Mode = FridgeMode.cold;

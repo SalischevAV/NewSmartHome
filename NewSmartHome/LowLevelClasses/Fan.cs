@@ -10,25 +10,23 @@ namespace NewSmartHome.LowLevelClasses
 {
     public class Fan: IFanable
     {
-        public FanSpeed SpeedFan { set; get; }
-        public FanSpeed SetSpeedFan(string setting)
+        public FanMode SpeedFan { set; get; }
+        public FanMode SetSpeedFan(string setting)
         {
             switch (setting)
             {
                 case "slow":
-                    SpeedFan = FanSpeed.slow;
+                    SpeedFan = FanMode.slow;
                     return SpeedFan;
                 case "medium":
-                    SpeedFan = FanSpeed.medium;
+                    SpeedFan = FanMode.medium;
                     return SpeedFan;
                 case "hight":
-                    SpeedFan = FanSpeed.hight;
+                    SpeedFan = FanMode.hight;
                     return SpeedFan;
                 default:
-                    SpeedFan = FanSpeed.off;
+                    SpeedFan = FanMode.off;
                     return SpeedFan;
-
-
             }
 
         }

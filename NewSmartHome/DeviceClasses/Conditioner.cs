@@ -15,16 +15,17 @@ namespace NewSmartHome.DeviceClasses
     {
         public ITemperatureable Compressor { set; get; }
         public IFanable ColdFan { set; get; }
+        private int temp;
 
         public int Temp
         {
             set
             {
-                if (value <= 30 && value >= 16) { Temp = value; }
+                if (value <= 30 && value >= 16) { temp = value; }
             }
-            get { return Temp; }
+            get { return temp; }
         }
-        public FanSpeed FanMode { set; get; }
+        public FanMode Mode { set; get; }
 
         public string SetMode (string setting)
         {
@@ -32,19 +33,20 @@ namespace NewSmartHome.DeviceClasses
             {
                 switch (setting)
                 {
+                    
                     case "slow":
-                        FanMode = ColdFan.SetSpeedFan("slow");
-                        return "conditioner fan speed set: " + FanMode;
+                        Mode = ColdFan.SetSpeedFan("slow");
+                        return "conditioner fan speed set: " + Mode;
                     case "medium":
-                        FanMode = ColdFan.SetSpeedFan("medium");
-                        return "conditioner fan speed set: " + FanMode;
+                        Mode = ColdFan.SetSpeedFan("medium");
+                        return "conditioner fan speed set: " + Mode;
                     case "hight":
-                        FanMode = ColdFan.SetSpeedFan("hight");
-                        return "conditioner fan speed set: " + FanMode;
+                        Mode = ColdFan.SetSpeedFan("hight");
+                        return "conditioner fan speed set: " + Mode;
                 }
             }
-            FanMode = ColdFan.SetSpeedFan("off");
-            return "conditioner fan speed set: " + FanMode;
+            Mode = ColdFan.SetSpeedFan("off");
+            return "conditioner fan speed set: " + Mode;
         }
 
         public string SetTemp(int settingTemp)

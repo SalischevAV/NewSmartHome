@@ -16,17 +16,17 @@ namespace NewSmartHome.DeviceClasses
             switch (setting)
             {
                 case "defrost":
-                    MWMode = MWOvenMode.Defrost;
+                    MWMode = MWOvenMode.defrost;
                     return "mw-oven mode set: " + MWMode;
                 case "easy":
-                    MWMode = MWOvenMode.Easy;
+                    MWMode = MWOvenMode.easy;
                     return "mw-oven mode set: " + MWMode;
                 case "grill":
-                    MWMode = MWOvenMode.Grill;
+                    MWMode = MWOvenMode.grill;
                     return "mw-oven mode set: " + MWMode;
                 case "normal":
                 default:
-                    MWMode = MWOvenMode.Normal;
+                    MWMode = MWOvenMode.normal;
                     return "mw-oven mode set: " + MWMode;
             }
         }

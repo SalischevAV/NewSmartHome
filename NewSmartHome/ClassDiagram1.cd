@@ -88,7 +88,7 @@
   <Class Name="NewSmartHome.DeviceClasses.Conditioner" Collapsed="true">
     <Position X="7.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAgAAAAgAAAAAAAEEAAQABAAAgAAAAAA=</HashCode>
+      <HashCode>AAAAAAAABAAAAgAAAAgACAAAAAEAAAQABAAAgAAAAAA=</HashCode>
       <FileName>DeviceClasses\Conditioner.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -120,7 +120,7 @@
   <Class Name="NewSmartHome.UI.ConsoleUIDevice" Collapsed="true">
     <Position X="5" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAEAAAAAAAAQAAAAEAAAAAAAAAAAAAIABAAgA=</HashCode>
+      <HashCode>AAAQAAAAEAAAAAAAAQAAAAEAAAAAAAAAQAAAIABAAgA=</HashCode>
       <FileName>UI\ConsoleUIDevice.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -222,11 +222,11 @@
       <FileName>Enums\MWOvenMode.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="NewSmartHome.Enums.FanSpeed" Collapsed="true">
+  <Enum Name="NewSmartHome.Enums.FanMode" Collapsed="true">
     <Position X="12" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAIAAAAACAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
-      <FileName>Enums\FanSpeed.cs</FileName>
+      <FileName>Enums\FanMode.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Delegate Name="NewSmartHome.Delegates.WriteLogDelegate" Collapsed="true">

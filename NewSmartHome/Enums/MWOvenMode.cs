@@ -8,9 +8,9 @@ namespace NewSmartHome.Enums
 {
     public enum MWOvenMode
     {
-        Defrost,
-        Easy,
-        Normal,
-        Grill
+        defrost,
+        easy,
+        normal,
+        grill
     }
 }

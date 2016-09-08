@@ -1,8 +1,10 @@
 ﻿using NewSmartHome.Delegates;
 using NewSmartHome.DeviceInterfaces;
+using NewSmartHome.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -120,6 +122,51 @@ namespace NewSmartHome.UI
                         break;
                 }
             }
+        }
+
+        public void GetListOfAvailableModes(IModeable sameDevice)
+        {
+            Type t = sameDevice.GetType();
+            PropertyInfo[] pI = t.GetProperties();
+            Type t2 = t;
+            foreach (PropertyInfo p in pI)
+            {
+                if ((Convert.ToString(p.PropertyType)).ToLower().Contains("mode"))
+                { t2 = p.PropertyType; }
+
+            }
+            if (t2 != t)
+            {
+                FieldInfo[] t2Fields = t2.GetFields();
+                Console.WriteLine("list of available modes: ");
+                foreach (MemberInfo m in t2Fields)
+                {
+                    if (!m.Name.Contains("__"))
+                        Console.WriteLine(m.Name);
+                }
+            }
+
+        }
+
+        public void ControlWithModeable(IModeable sameDevice)
+        {
+            Console.WriteLine("Mode setting.");
+            GetListOfAvailableModes(sameDevice);
+            string settingMode = Console.ReadLine().ToLower();
+            try
+            {
+                sameDevice.SetMode(settingMode);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Source);
+            }
+            if (actWithDevice != null)
+            {
+                actWithDevice.Invoke(sameDevice.SetMode(settingMode));
+            }
+
         }
     }
 }

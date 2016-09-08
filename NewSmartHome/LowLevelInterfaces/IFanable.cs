@@ -9,8 +9,8 @@ namespace NewSmartHome.LowLevelInterfaces
 {
     public interface IFanable
     {
-        FanSpeed SpeedFan { set; get; }
-        FanSpeed SetSpeedFan(string setting);
+        FanMode SpeedFan { set; get; }
+        FanMode SetSpeedFan(string setting);
 
     }
 }

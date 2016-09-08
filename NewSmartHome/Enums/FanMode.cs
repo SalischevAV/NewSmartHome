@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.Enums
 {
-    public enum FanSpeed
+    public enum FanMode
     {
         off,
         slow,

@@ -26,17 +26,17 @@ namespace NewSmartHome.DeviceClasses
             switch (setting)
             {
                 case "dim":
-                    Brightness = LampMode.Dim;
+                    Brightness = LampMode.dim;
                     return Brightness;
                 case "medium":
-                    Brightness = LampMode.MediumBright;
+                    Brightness = LampMode.mediumbright;
                     return Brightness;
                 case "hight":
-                    Brightness = LampMode.Bright;
+                    Brightness = LampMode.bright;
                     return Brightness;
                 case "off":
                 default:
-                    Brightness = LampMode.Off;
+                    Brightness = LampMode.off;
                     return Brightness;
             }
 
