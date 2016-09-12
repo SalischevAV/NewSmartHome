@@ -71,7 +71,7 @@ namespace Refrigerator
             {
                 xmlSerializer.Serialize(fs, listDevice);
             }
-                return "Smart house save in XML format";
+            return "Smart house save in XML format";
         }
         public string SaveXMLFormat(string keysPath, string devicesPath, Dictionary<string, Device> dict)
         {

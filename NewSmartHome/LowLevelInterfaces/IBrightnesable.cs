@@ -9,6 +9,7 @@ namespace NewSmartHome.Interfaces
 {
     public interface IBrightnesable
     {
+        LampMode Brightness { set; get; }
         LampMode SetBrightness(string setting);
     }
 }

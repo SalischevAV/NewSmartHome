@@ -30,12 +30,12 @@ namespace NewSmartHome.ServiceClasses
             deviceClasses.OrderBy(dCl => dCl);
         }
 
-        public Device CreateDevice(string name, string typeOfDevice)
-        {
-            string s = Console.ReadLine();
-            Device sameDevice = new s ();
-            return sameDevice;
-        }
+        //public Device CreateDevice(string name, string typeOfDevice)
+        //{
+        //    string s = Console.ReadLine();
+        //    Device sameDevice = new s();
+        //    return sameDevice;
+        //}
 
 
 

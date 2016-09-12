@@ -22,7 +22,7 @@ namespace NewSmartHome.DeviceClasses
 
         public LampMode SetBrightness(string setting)
         {
-
+            
             switch (setting)
             {
                 case "dim":

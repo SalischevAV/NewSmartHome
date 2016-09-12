@@ -28,6 +28,8 @@ namespace NewSmartHome.DeviceClasses
         }
         public FanMode Mode { set; get; }
 
+           
+       
         public string SetMode (string setting)
         {
             if (State)
@@ -67,6 +69,11 @@ namespace NewSmartHome.DeviceClasses
         {
             Temp--;
             return "conditioner temperature set: " + Temp;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + "Fan mode: " + Mode + ", temperature: " + Temp + ".";
         }
     }
 }

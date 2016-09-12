@@ -11,6 +11,7 @@ namespace NewSmartHome.DeviceClasses
     {
 
         public virtual bool State { set; get; }
+        public string Name { set; get; }
 
         public virtual string Power()
         {
@@ -20,16 +21,8 @@ namespace NewSmartHome.DeviceClasses
 
         public override string ToString()
         {
-            Type t = this.GetType();
-            string info = Convert.ToString(t) + ". ";
-            PropertyInfo[] propertyArr = t.GetProperties();
-
-            foreach (PropertyInfo pInf in propertyArr)
-            {
-                info += pInf.Name + " - ";
-                info += pInf.PropertyType + "; ";
-            }
-            return info;
+            return Name + ": " + this.GetType().Name + ". State device: " + State+ ".";
         }
+
     }
 }

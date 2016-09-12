@@ -29,21 +29,26 @@ namespace NewSmartHome.DeviceClasses
         public IBrightnesable FridgeLamp { set; get; }
         public FridgeMode Mode { set; get; }
         public ColdGenerator Compressor { set; get; }
+        private int temp;
         public int Temp
         {
             set
             {
                 if ((Mode == FridgeMode.extracold) && (value <= -10 && value > -20))
-                { Temp = value; }
+                { temp = value; }
                 else if ((Mode == FridgeMode.cold) && (value <= -5 && value >= -9))
-                { Temp = value; }
+                { temp = value; }
                 else if ((Mode == FridgeMode.defrost) && (value > -5 && value <= 0))
-                { Temp = value; }
+                { temp = value; }
             }
             get
             {
-                return Temp;
+                return temp;
             }
+        }
+        public Fridge()
+        {
+            FridgeLamp = new Lamp();
         }
         public string SetMode(string setting)
         {
@@ -105,6 +110,11 @@ namespace NewSmartHome.DeviceClasses
                 else { FridgeLamp.SetBrightness("off"); }
             }
             return "Door: " + Door;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + " Mode of work: " + Mode + ", temperature: " + Temp + ", door open is: " + Door + ", fridge lamp: " + FridgeLamp.Brightness + ".";
         }
 
 
