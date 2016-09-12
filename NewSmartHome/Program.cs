@@ -29,13 +29,15 @@ namespace NewSmartHome
             //cond.State = true;
             //cui.ControlWithModeable(cond);
 
-            DeviceCreator dc = new DeviceCreator();
-            //foreach (string s in dc.deviceClasses)
-            //{
-            //    Console.WriteLine(s);
-            //}
-            Console.WriteLine(dc.device);
-
+            DeviceCreator dc = new DeviceCreator(@"D:\projects\Git\NewSmartHome\NewSmartHome\DeviceClasses\");
+            dc.GetavAilableClasses();
+            foreach (string s in dc.deviceClasses)
+            {
+                Console.WriteLine(s);
+            }
+            Console.WriteLine("--------------------");
+            //Console.WriteLine(dc.device);
+            Console.WriteLine(fr.GetType().Name);
             Console.WriteLine("press any key");
             Console.ReadLine();
 

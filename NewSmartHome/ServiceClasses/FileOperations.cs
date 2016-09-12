@@ -64,13 +64,31 @@ namespace Refrigerator
         //    }
         //    return "Smart house load from SOAP format";
         //}
-
+        public string SaveXMLFormat(List<Device> listDevice, string fileName)
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Device>));
+            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            {
+                xmlSerializer.Serialize(fs, listDevice);
+            }
+                return "Smart house save in XML format";
+        }
         public string SaveXMLFormat(string keysPath, string devicesPath, Dictionary<string, Device> dict)
         {
             SerializerDictionaryXML xml = new SerializerDictionaryXML(keysPath, devicesPath);
             xml.Serialaze(dict);
             return "Smart house save in XML format";
 
+        }
+
+        public string LoadFromXMLFormat(string fileName, List<Device> listDevice)
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Device>));
+            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            {
+                listDevice = (List<Device>)xmlSerializer.Deserialize(fs);
+            }
+                return "Smart house load from XML format";
         }
 
         public string LoadFromXMLFormat (string keysPath, string devicesPath, Dictionary<string, Device> dict)

@@ -10,13 +10,36 @@ namespace NewSmartHome.ServiceClasses
 {
     public class DeviceCreator
     {
-        
-        public Device NewDevice { set; get; }
-        // public string[] deviceClasses = Directory.GetFiles(@"C:\Users\Lena\Source\Repos\NewSmartHome\NewSmartHome\DeviceClasses");
-        public DirectoryInfo device = Directory.GetParent(@".");
-        
+        public string Path { set; get; }
 
-        
+        public string[] deviceClasses { set; get; }
+        public Device NewDevice { set; get; }
+        public DeviceCreator(string path)
+        {
+            Path = path;
+        }
+        public void GetavAilableClasses()
+        {
+
+            deviceClasses = Directory.GetFiles(Path);
+            for (int i = 0; i < deviceClasses.Length; i++)
+            {
+                deviceClasses[i] = deviceClasses[i].TrimStart(Path.ToCharArray());
+                deviceClasses[i] = deviceClasses[i].TrimEnd(".cs".ToCharArray());
+            }
+            deviceClasses.OrderBy(dCl => dCl);
+        }
+
+        public Device CreateDevice(string name, string typeOfDevice)
+        {
+            string s = Console.ReadLine();
+            Device sameDevice = new s ();
+            return sameDevice;
+        }
+
+
+
+
 
 
 
@@ -41,5 +64,5 @@ namespace NewSmartHome.ServiceClasses
 
         //    }
     }
-    }
+}
 
