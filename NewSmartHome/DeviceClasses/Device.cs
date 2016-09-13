@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
+    [Serializable]
     public abstract class Device
     {
 
         public virtual bool State { set; get; }
-        public string Name { set; get; }
-
+        
         public virtual string Power()
         {
             State = !State;
@@ -21,7 +21,7 @@ namespace NewSmartHome.DeviceClasses
 
         public override string ToString()
         {
-            return Name + ": " + this.GetType().Name + ". State device: " + State+ ".";
+            return this.GetType().Name + ". State device: " + State+ ".";
         }
 
     }

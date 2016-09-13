@@ -7,21 +7,23 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.LowLevelClasses
 {
+    [Serializable]
     class AudioPlayer: ILowLevelVolumeable
     {
+        private int volLevel;
          public int VolLevel
         {
             set
             {
                 if (value >= 0 && value <= 100)
                 {
-                    VolLevel = value;
+                    volLevel = value;
                 }
 
             }
             get
             {
-                return VolLevel;
+                return volLevel;
             }
         }
 

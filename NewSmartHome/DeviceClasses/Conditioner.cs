@@ -28,7 +28,15 @@ namespace NewSmartHome.DeviceClasses
         }
         public FanMode Mode { set; get; }
 
-           
+        public Conditioner()
+        {
+                
+        }
+        public Conditioner(ITemperatureable compressor, IFanable coldFan)
+        {
+            Compressor = compressor;
+            ColdFan = coldFan;  
+        }
        
         public string SetMode (string setting)
         {
@@ -73,7 +81,7 @@ namespace NewSmartHome.DeviceClasses
 
         public override string ToString()
         {
-            return base.ToString() + "Fan mode: " + Mode + ", temperature: " + Temp + ".";
+            return base.ToString() + " Fan mode: " + Mode + ", temperature: " + Temp + ".";
         }
     }
 }

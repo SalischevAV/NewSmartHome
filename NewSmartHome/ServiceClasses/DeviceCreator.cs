@@ -1,4 +1,7 @@
 ﻿using NewSmartHome.DeviceClasses;
+using NewSmartHome.Interfaces;
+using NewSmartHome.LowLevelClasses;
+using NewSmartHome.LowLevelInterfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,10 +17,10 @@ namespace NewSmartHome.ServiceClasses
 
         public string[] deviceClasses { set; get; }
         public Device NewDevice { set; get; }
-        public DeviceCreator(string path)
-        {
-            Path = path;
-        }
+        //public DeviceCreator(string path)
+        //{
+        //    Path = path;
+        //}
         public void GetavAilableClasses()
         {
 
@@ -30,39 +33,39 @@ namespace NewSmartHome.ServiceClasses
             deviceClasses.OrderBy(dCl => dCl);
         }
 
-        //public Device CreateDevice(string name, string typeOfDevice)
-        //{
-        //    string s = Console.ReadLine();
-        //    Device sameDevice = new s();
-        //    return sameDevice;
-        //}
 
+        public Device CreateDevice(string TypeOfDevice)
+        {
+            IBrightnesable lamp = new Lamp();
+            IFanable fan = new Fan();
+            ILowLevelVolumeable soundController = new AudioPlayer();
+            ITemperatureable compressor = new ColdGenerator();
 
-
-
-
-
-
-
-        //public Device CreateDevice(string TypeOfDevice)
-        //{
-        //    switch (TypeOfDevice)
-        //    {
-        //        case ("fridge"):
-        //            NewDevice = new Fridge();
-        //            //NewDevice.deviceNotificator += ServiceMessages.Message;
-        //            return NewDevice;
-        //        case ("conditioner"):
-        //            NewDevice = new Conditioner();
-        //            return NewDevice;
-        //        case ("radio"):
-        //        default:
-        //            NewDevice = new Radio();
-        //            return NewDevice;
-
-
-
-        //    }
+            switch (TypeOfDevice)
+            {
+                case ("fridge"):
+                    NewDevice = new Fridge(lamp, compressor);
+                    //NewDevice.deviceNotificator += ServiceMessages.Message;
+                    return NewDevice;
+                case ("conditioner"):
+                    NewDevice = new Conditioner(compressor, fan);
+                    return NewDevice;
+                case ("oven"):
+                    NewDevice = new Oven(lamp);
+                    return NewDevice;
+                case ("mwoven"):
+                    NewDevice = new MWOven(lamp);
+                    return NewDevice;
+                case ("radiolamp"):
+                    NewDevice = new RadioLamp(lamp);
+                    return NewDevice;
+                case ("radio"):
+                    NewDevice = new Radio(soundController);
+                    return NewDevice;
+                default:
+                    throw new Exception("non-existent type of device");
+            }
+        }
     }
 }
 

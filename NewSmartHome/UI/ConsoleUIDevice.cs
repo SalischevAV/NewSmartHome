@@ -113,9 +113,11 @@ namespace NewSmartHome.UI
                 {
                     case '1':
                         sameDevice.SetVolume(true);
+                        Console.WriteLine("\nЗвук увеличен на 1");
                         break;
                     case '2':
                         sameDevice.SetVolume(false);
+                        Console.WriteLine("\nЗвук уменьшен на 1");
                         break;
                     default:
                         adjVol = false;

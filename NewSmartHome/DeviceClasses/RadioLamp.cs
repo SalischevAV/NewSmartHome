@@ -14,6 +14,15 @@ namespace NewSmartHome.DeviceClasses
     {
         public IBrightnesable RLamp { set; get; }
         public LampMode LightBrightnes { set; get; }
+
+        public RadioLamp()
+        {
+                
+        }
+        public RadioLamp(IBrightnesable rlamp)
+        {
+            RLamp = rlamp; 
+        }
         public string SetBrightnes ( string settingBrightness)
         {
             if (State)
@@ -39,6 +48,11 @@ namespace NewSmartHome.DeviceClasses
                 }
             }
             else return "radioLamp is OFF";
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + ", lamp brightness: " + RLamp.Brightness + ".";
         }
     }
 }

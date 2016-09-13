@@ -28,7 +28,7 @@ namespace NewSmartHome.DeviceClasses
         }
         public IBrightnesable FridgeLamp { set; get; }
         public FridgeMode Mode { set; get; }
-        public ColdGenerator Compressor { set; get; }
+        public ITemperatureable Compressor { set; get; }
         private int temp;
         public int Temp
         {
@@ -48,7 +48,12 @@ namespace NewSmartHome.DeviceClasses
         }
         public Fridge()
         {
-            FridgeLamp = new Lamp();
+            
+        }
+        public Fridge(IBrightnesable lamp, ITemperatureable compressor)
+        {
+            FridgeLamp = lamp;
+            Compressor = compressor;
         }
         public string SetMode(string setting)
         {
@@ -56,13 +61,13 @@ namespace NewSmartHome.DeviceClasses
             {
                 switch (setting)
                 {
-                    case "extra":
+                    case "extracold":
                         Mode = FridgeMode.extracold;
                         return "fridge mode set EXTRACOLD";
                     case "cold":
                         Mode = FridgeMode.cold;
                         return "fridge mode set COLD";
-                    case "hot":
+                    case "defrost":
                     default:
                         Mode = FridgeMode.defrost;
                         return "fridge mode set DEFROST";

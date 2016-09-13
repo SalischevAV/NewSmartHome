@@ -26,6 +26,14 @@ namespace NewSmartHome.DeviceClasses
             }
             get { return channel; }
         }
+        public Radio()
+        {
+                
+        }
+        public Radio(ILowLevelVolumeable soundController)
+        {
+            SoundController = soundController;
+        }
 
         public string SetChannel(int settingChannel)
         {
@@ -50,6 +58,11 @@ namespace NewSmartHome.DeviceClasses
         {
             Volume = SoundController.AdjustVolume(increase);
             return "volume level set: " + Volume;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + " Channel №: " + Channel + ", volume level: " + Volume + ".";
         }
     }
 }

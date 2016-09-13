@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
+    [Serializable]
     public class ColdGenerator: ITemperatureable
     {
         public int Temp { set; get; }

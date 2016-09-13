@@ -32,5 +32,17 @@ namespace NewSmartHome.DeviceClasses
                     return "mw-oven mode set: " + MWMode;
             }
         }
+        public MWOven()
+        {
+                
+        }
+        public MWOven(IBrightnesable lamp):base(lamp)
+        {
+                
+        }
+        public override string ToString()
+        {
+            return base.ToString() + ", mode work: " + MWMode + ".";
+        }
     }
 }

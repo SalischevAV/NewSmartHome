@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
+    [Serializable]
     public class Lamp : IBrightnesable
     {
         public Lamp() { } //ctor for XML-serializable

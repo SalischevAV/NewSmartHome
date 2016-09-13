@@ -13,6 +13,8 @@ namespace Refrigerator
 {
     public class FileOperations
     {
+        public static Dictionary<string, Device> smartHouseDevices { get; private set; }
+
         public static string SaveBinaryFormat(object smartHouse, string fileName)
         {
             BinaryFormatter myBin = new BinaryFormatter();
@@ -25,45 +27,18 @@ namespace Refrigerator
 
         }
 
-        public static string LoadFromBynaryFormat(string fileName)
+        public static Dictionary<string, Device> LoadFromBynaryFormat(string fileName)
         {
             BinaryFormatter myBin = new BinaryFormatter();
             using (Stream myFStream = File.OpenRead(fileName))
             {
-                Device deviceFromBinaryFile = (Device)myBin.Deserialize(myFStream);
+                Dictionary<string, Device>smartHouseDevices = (Dictionary<string, Device>)myBin.Deserialize(myFStream);
             }
-            return "Smart house load from binary format";
+            return smartHouseDevices;
         }
 
-        //Начиная с .NET Framework 2.0, этот класс устарел.Взамен рекомендуется использовать BinaryFormatter.
-        //public static string SaveSoapFormat(object smartHouse, string fileName)
-        //{
-        //    SoapFormatter myBin = new SoapFormatter();
-        //    using (Stream myFStream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None))
-        //    {
-        //        try
-        //        {
-        //            myBin.Serialize(myFStream, smartHouse);
-        //            return "Smart house save in SOAP format";
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            return (ex.Message);
-        //        }
-        //    }
-
-
-        //}
-
-        //public static string LoadFromSOPAPFormat(string fileName)
-        //{
-        //    SoapFormatter myBin = new SoapFormatter();
-        //    using (Stream myFStream = File.OpenRead(fileName))
-        //    {
-        //        Device deviceFromBinaryFile = (Device)myBin.Deserialize(myFStream);
-        //    }
-        //    return "Smart house load from SOAP format";
-        //}
+      
+        
         public string SaveXMLFormat(List<Device> listDevice, string fileName)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Device>));

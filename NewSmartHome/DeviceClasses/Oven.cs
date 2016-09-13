@@ -11,12 +11,21 @@ namespace NewSmartHome.DeviceClasses
     [Serializable]
     public class Oven : Device, IDoorable, IFridgeable
     {
+        private int temp;
         public IBrightnesable OvenLamp { set; get; }
         public bool Door { set; get; }
         public int Temp
         {
-            set  {  if (value <= 400 && value >= 180) { Temp = value; } }
-            get { return Temp; }
+            set  {  if (value <= 400 && value >= 180) { temp = value; } }
+            get { return temp; }
+        }
+        public Oven()
+        {
+            
+        }
+        public Oven(IBrightnesable lamp)
+        {
+            OvenLamp = lamp;  
         }
 
         public string DecrTemp()
@@ -46,6 +55,10 @@ namespace NewSmartHome.DeviceClasses
                 else { OvenLamp.SetBrightness("off"); }
             }
             return "Door: " + Door;
+        }
+        public override string ToString()
+        {
+            return base.ToString() + "Door open: " + Door + ", lamp is:" + OvenLamp.Brightness + ", temperature set: " + Temp;
         }
 
     }

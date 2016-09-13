@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace NewSmartHome.LowLevelClasses
 {
+    [Serializable]
     public class Fan: IFanable
     {
         public FanMode SpeedFan { set; get; }
