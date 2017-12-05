@@ -50,6 +50,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,12 +62,24 @@
   <ItemGroup>
     <Compile Include="Delegates\WriteLogDelegate.cs" />
     <Compile Include="DeviceClasses\Conditioner.cs" />
+    <Compile Include="DeviceFactory\FridgeCreator.cs" />
+    <Compile Include="DeviceFactory\MWOvenCreator.cs" />
+    <Compile Include="DeviceFactory\OvenCreator.cs" />
+    <Compile Include="DeviceFactory\RadioCreator.cs" />
+    <Compile Include="DeviceFactory\RadioLampCreator.cs" />
     <Compile Include="DeviceInterfaces\IChannelable.cs" />
     <Compile Include="DeviceInterfaces\IDoorable.cs" />
     <Compile Include="DeviceInterfaces\IFridgeable.cs" />
     <Compile Include="DeviceInterfaces\ILightable.cs" />
     <Compile Include="DeviceInterfaces\IVolumeable.cs" />
     <Compile Include="Enums\FanMode.cs" />
+    <Compile Include="DeviceFactory\ConditionerCreator.cs" />
+    <Compile Include="DeviceFactory\DeviceCreator.cs" />
+    <Compile Include="Exeptions\NonexestingDeviceExeption.cs" />
+    <Compile Include="FileOperations\BinaryOperations.cs" />
+    <Compile Include="FileOperations\IFileOperations.cs" />
+    <Compile Include="FileOperations\JSONOperations.cs" />
+    <Compile Include="FileOperations\XMLOperations.cs" />
     <Compile Include="LowLevelClasses\AudioPlayer.cs" />
     <Compile Include="LowLevelClasses\ColdGenerator.cs" />
     <Compile Include="DeviceClasses\Device.cs" />
@@ -80,6 +93,14 @@
     <Compile Include="Enums\LampMode.cs" />
     <Compile Include="Enums\MWOvenMode.cs" />
     <Compile Include="LowLevelClasses\Fan.cs" />
+    <Compile Include="LowLevelDeviceFactoryes\BrightnesFactory\CreateLamp.cs" />
+    <Compile Include="LowLevelDeviceFactoryes\BrightnesFactory\CreateIBrightnesable.cs" />
+    <Compile Include="LowLevelDeviceFactoryes\FanFactory\CreateFan.cs" />
+    <Compile Include="LowLevelDeviceFactoryes\FanFactory\CreateIFanable.cs" />
+    <Compile Include="LowLevelDeviceFactoryes\TemperatureFactory\CreateColdGenerator.cs" />
+    <Compile Include="LowLevelDeviceFactoryes\TemperatureFactory\CreateITemperatureable.cs" />
+    <Compile Include="LowLevelDeviceFactoryes\VolumeFactory\CreateAudioPlayer.cs" />
+    <Compile Include="LowLevelDeviceFactoryes\VolumeFactory\CreateIVolumeable.cs" />
     <Compile Include="LowLevelInterfaces\IBrightnesable.cs" />
     <Compile Include="DeviceInterfaces\IModeable.cs" />
     <Compile Include="LowLevelInterfaces\IFanable.cs" />
@@ -87,10 +108,10 @@
     <Compile Include="LowLevelInterfaces\ILowLevelVolumeable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceClasses\DeviceCreator.cs" />
     <Compile Include="ServiceClasses\FileOperations.cs" />
     <Compile Include="ServiceClasses\SerializerDictionaryXML.cs" />
     <Compile Include="ServiceClasses\WriteLogToFile.cs" />
+    <Compile Include="ServiceClasses\XmlSerializableDictionary.cs" />
     <Compile Include="UI\ConsoleUIDevice.cs" />
   </ItemGroup>
   <ItemGroup>

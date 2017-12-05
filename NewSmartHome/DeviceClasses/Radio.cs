@@ -3,17 +3,24 @@ using NewSmartHome.LowLevelInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
     [Serializable]
+    [DataContract]
     public class Radio : Device, IVolumeable, IChannelable
     {
+        [DataMember]
         public ILowLevelVolumeable SoundController { set; get; }
+
+        [DataMember]
         public int Volume { set; get; }
         private int channel;
+
+        [DataMember]
         public int Channel
         {
             set

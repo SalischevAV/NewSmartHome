@@ -3,18 +3,26 @@ using NewSmartHome.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
     [Serializable]
+    [DataContract]
     public class Oven : Device, IDoorable, IFridgeable
     {
         private int temp;
+
+        [DataMember]
         public IBrightnesable OvenLamp { set; get; }
+
+        [DataMember]
         public bool Door { set; get; }
-        public int Temp
+
+        [DataMember]
+        public virtual int Temp
         {
             set  {  if (value <= 400 && value >= 180) { temp = value; } }
             get { return temp; }
@@ -28,19 +36,19 @@ namespace NewSmartHome.DeviceClasses
             OvenLamp = lamp;  
         }
 
-        public string DecrTemp()
+        public virtual string DecrTemp()
         {
             Temp--;
             return "oven temperature set: " + Temp;
         }
 
-        public string IncrTemp()
+        public virtual string IncrTemp()
         {
             Temp++;
             return "oven temperature set: " + Temp;
         }
 
-        public string SetTemp(int settingTemp)
+        public virtual string SetTemp(int settingTemp)
         {
             Temp = settingTemp;
             return "oven temperature set: " + Temp;

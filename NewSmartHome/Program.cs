@@ -1,6 +1,14 @@
 ﻿using NewSmartHome.DeviceClasses;
+using NewSmartHome.DeviceFactory;
 using NewSmartHome.DeviceInterfaces;
+using NewSmartHome.Exeption;
+using NewSmartHome.Factory;
+using NewSmartHome.FileOperations;
 using NewSmartHome.Interfaces;
+using NewSmartHome.LowLevelDeviceFactory.Brightnes;
+using NewSmartHome.LowLevelDeviceFactoryes.FanFactory;
+using NewSmartHome.LowLevelDeviceFactoryes.TemperatureFactory;
+using NewSmartHome.LowLevelDeviceFactoryes.VolumeFactory;
 using NewSmartHome.ServiceClasses;
 using NewSmartHome.UI;
 using Refrigerator;
@@ -12,25 +20,25 @@ using System.Reflection;
 using System.Runtime.Serialization.Formatters.Soap;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace NewSmartHome
 {
     class Program
     {
-        
+        protected IFileOperations fOp = new BinaryOperations();
+
 
         static void Main(string[] args)
         {
-            DeviceCreator myDCreator = new DeviceCreator();
             ConsoleUIDevice myUI = new ConsoleUIDevice();
-            FileOperations fOp = new FileOperations();
 
 
-            Dictionary<string, Device> smartHoseDevices = new Dictionary<string, Device>();
+            XmlSerializableDictionary<string, Device> smartHoseDevices = new XmlSerializableDictionary<string, Device>();
+
+            new BinaryOperations().SaveToFile(smartHoseDevices, "sh.bin");
 
             //Dictionary<string, Device> smartHoseDevices = new Dictionary<string, Device>();
-
-
 
             //smartHoseDevices.Add("nord", myDCreator.CreateDevice("fridge"));
 
@@ -72,7 +80,7 @@ namespace NewSmartHome
                     case "add":
                         try
                         {
-                            smartHoseDevices.Add(commands[1], myDCreator.CreateDevice(commands[2]));
+                            smartHoseDevices.Add(commands[1], AddDevice(commands[2]));
                         }
                         catch (Exception ex)
                         {
@@ -84,7 +92,7 @@ namespace NewSmartHome
                         smartHoseDevices.Remove(commands[1]);
                         break;
 
-                    case "power":                        
+                    case "power":
                         var res = smartHoseDevices.Where(s => s.Key == commands[1]);
                         foreach (var device in res)
                         { device.Value.Power(); }
@@ -216,7 +224,7 @@ namespace NewSmartHome
             Console.ReadKey();
         }
 
-        static void SaveLoadMenu(Dictionary<string, Device> myDict)
+        static void SaveLoadMenu(XmlSerializableDictionary<string, Device> myDict)
         {
             Console.Clear();
             Console.WriteLine();
@@ -228,10 +236,10 @@ namespace NewSmartHome
                 switch (command)
                 {
                     case "save":
-                        FileOperations.SaveBinaryFormat(myDict, "SmartHouse.dat");
+                        new JSONOperations().SaveToFile(myDict, @"D:\SmartHouse.xml");                     
                         return;
                     case "load":
-                        FileOperations.LoadFromBynaryFormat("SmartHouse.dat");
+                        new XMLOperations().LoadFromFile("SmartHouse.xml");
                         foreach (var r in myDict)
                         {
                             Console.WriteLine(r);
@@ -251,7 +259,7 @@ namespace NewSmartHome
             Console.WriteLine("Доступные команды:");
             Console.WriteLine("\tSave Binary");
             Console.WriteLine("\tLoad Bimary");
-            Console.WriteLine("\tSOAP - в разработке");
+            Console.WriteLine("\tJSON - в разработке");
             Console.WriteLine("\tXML - в разработке");
             Console.WriteLine("\texit");
             Console.WriteLine("Press any key for continue");
@@ -259,6 +267,46 @@ namespace NewSmartHome
 
         }
 
+        private static Device AddDevice(string typeDevice)
+        {
+            DeviceCreator myDCreator;
+
+            CreateIBrightnesable createLamp = new CreateLamp();
+            CreateIFanable createFun = new CreateFan();
+            CreateITemperatureable createCompressor = new CreateColdGenerator();
+            CreateIVolumeable createPlayer = new CreateAudioPlayer();
+
+            switch (typeDevice)
+            {
+                case "fridge":
+                    myDCreator = new FridgeCreator(createCompressor, createLamp);
+                    return (Fridge)myDCreator.CreateDevice();
+
+                case "oven":
+                    myDCreator = new OvenCreator(createLamp);
+                    return (Oven)myDCreator.CreateDevice();
+
+                case "mwoven":
+                    myDCreator = new MWOvenCreator(createLamp);
+                    return (MWOven)myDCreator.CreateDevice();
+
+                case "conditioner":
+                    myDCreator = new ConditionerCreator(createCompressor, createFun);
+                    return (Conditioner)myDCreator.CreateDevice();
+
+                case "radio":
+                    myDCreator = new RadioCreator(createPlayer);
+                    return (Radio)myDCreator.CreateDevice();
+
+                case "radiolamp":
+                    myDCreator = new RadioLampCreator(createPlayer, createLamp);
+                    return (RadioLamp)myDCreator.CreateDevice();
+
+                default:
+                    throw new NonexestingDeviceExeption("Несуществующий тип устройств");
+
+            }
+        }
 
 
     }

@@ -5,15 +5,20 @@ using NewSmartHome.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
     [Serializable]
+    [DataContract]
     public class Fridge : Device, IModeable, IFridgeable, IDoorable
     {
+        [DataMember]
         public bool Door { set; get; }
+
+        [DataMember]
         public override bool State
         {
             get
@@ -26,10 +31,18 @@ namespace NewSmartHome.DeviceClasses
                 base.State = value;
             }
         }
+
+        [DataMember]
         public IBrightnesable FridgeLamp { set; get; }
+
+        [DataMember]
         public FridgeMode Mode { set; get; }
+
+        [DataMember]
         public ITemperatureable Compressor { set; get; }
         private int temp;
+
+        [DataMember]
         public int Temp
         {
             set
@@ -48,7 +61,7 @@ namespace NewSmartHome.DeviceClasses
         }
         public Fridge()
         {
-            
+
         }
         public Fridge(IBrightnesable lamp, ITemperatureable compressor)
         {

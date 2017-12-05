@@ -1,16 +1,15 @@
 ﻿using NewSmartHome.LowLevelInterfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace NewSmartHome.LowLevelClasses
 {
     [Serializable]
+    [DataContract]
     class AudioPlayer: ILowLevelVolumeable
     {
         private int volLevel;
+        [DataMember]
          public int VolLevel
         {
             set
@@ -26,7 +25,7 @@ namespace NewSmartHome.LowLevelClasses
                 return volLevel;
             }
         }
-
+  
         public int AdjustVolume(bool increase)
         {
             if (increase == true)

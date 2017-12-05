@@ -6,18 +6,24 @@ using NewSmartHome.LowLevelInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
     [Serializable]
+    [DataContract]
     public class Conditioner : Device, IFridgeable, IModeable
     {
+        [DataMember]
         public ITemperatureable Compressor { set; get; }
+
+        [DataMember]
         public IFanable ColdFan { set; get; }
         private int temp;
 
+        [DataMember]
         public int Temp
         {
             set
@@ -26,11 +32,13 @@ namespace NewSmartHome.DeviceClasses
             }
             get { return temp; }
         }
+
+        [DataMember]
         public FanMode Mode { set; get; }
 
         public Conditioner()
         {
-                
+
         }
         public Conditioner(ITemperatureable compressor, IFanable coldFan)
         {

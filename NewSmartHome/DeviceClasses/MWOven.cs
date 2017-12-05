@@ -3,15 +3,17 @@ using NewSmartHome.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace NewSmartHome.DeviceClasses
 {
     [Serializable]
+    [DataContract]
     public class MWOven : Oven, IModeable
     {
-
+        [DataMember]
         public MWOvenMode MWMode { set; get; }
         public string SetMode(string setting)
         {
